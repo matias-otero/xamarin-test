@@ -17,15 +17,29 @@
         <StackLayout x:Name="CandidatesListView"
                      IsVisible="False">
             <StackLayout>
-                <Label Text="Candidates list"></Label>
+                <Label Text="Candidates list"
+                       FontSize="Title"
+                       HorizontalOptions="Center"
+                       TextColor="Black"></Label>
             </StackLayout>
             <ListView x:Name="MyListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding CompleteName}"></TextCell>
+                        <TextCell Text="{Binding CompleteName}"
+                                  Command="{Binding ClickCellCommand}"></TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+        </StackLayout>
+        <StackLayout>
+            <Label  HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    x:Name="ErrorMessage"
+                    IsVisible="False"></Label>
+        </StackLayout>
+        <StackLayout>
+            <Label x:Name="CandidateBio"
+                   IsVisible="False"></Label>
         </StackLayout>
     </StackLayout>
 </ContentPage>
